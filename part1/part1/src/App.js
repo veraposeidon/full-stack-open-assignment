@@ -20,11 +20,13 @@ const App = () => {
 
   return (
     <div>
+      <h1>Anecdote of the day</h1>
       <p>{anecdotes[selected]}</p>
       <p>has {votes[selected]} votes</p>
       <Button handleClick={() => setVotes(votes.map((vote, index) => index === selected ? vote + 1 : vote))} text="vote" />
-      <Button handleClick={() => setSelected(Math.floor(Math.random() * anecdotes.length))}
-      text="next anecdote" />
+      <Button handleClick={() => setSelected(Math.floor(Math.random() * anecdotes.length))} text="next anecdote" />
+      <h1>Anecdote with most votes</h1>
+      <p>{anecdotes[votes.indexOf(Math.max(...votes))]}</p>
     </div>
   )
 }
