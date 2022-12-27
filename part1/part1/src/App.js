@@ -8,6 +8,13 @@ const Statistics = (props) => {
   const good = props.good
   const neutral = props.neutral
   const bad = props.bad
+  if (good + neutral + bad === 0) {
+    return (
+      <div>
+        <p>No feedback given</p>
+      </div>
+    )
+  }
   return (
     <div>
         <p>Good: {good}</p>
